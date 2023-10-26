@@ -37,7 +37,7 @@ waveform = stft.istft(spec_del_ipceffect, None)
 
 ## Similar Projects
 - [MATLAB based official implementation](https://codeocean.com/capsule/1906064/tree/v1) (by the authors of the paper, MIT License)
-- [TensorFlow based implementation](https://github.com/StephLin/wipctv/tree/master) (by StephLin, Apache License 2.0)
+- [unofficial implementation (iPCTV [2])](https://github.com/StephLin/wipctv/tree/master) (by StephLin, Apache License 2.0)
 
 ## Reference
 [1] K. Yatabe and Y. Oikawa, "Phase corrected total variation for audio signals," _Proc. of IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)_, 2018.  
