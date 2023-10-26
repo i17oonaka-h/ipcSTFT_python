@@ -1,9 +1,8 @@
-import torchaudio
 import torch
 import math
 torch.pi = torch.acos(torch.zeros(1)).item() * 2
 
-class ipcSTFT(torch.nn.Module):
+class ipcSTFT:
     def __init__(
         self,
         n_fft,
@@ -104,29 +103,3 @@ class ipcSTFT(torch.nn.Module):
         spectrogram = spectrogram * inv_D_spin if inv_D_spin is not None else spectrogram
         x = self._istft(spectrogram)
         return x
-
-    
-
-if __name__ == "__main__":
-    import matplotlib.pyplot as plt
-    import numpy as np
-    # Test
-    stft = ipcSTFT(n_fft=2048, hop_length=512)
-    stft_window = stft.window
-    # watch window and time_differential_window
-    plt.plot(np.arange(2048), stft_window.numpy(), label="window")
-    plt.legend()
-    plt.savefig("window.png")
-    plt.close()
-    plt.plot(np.arange(2048), stft.time_differential_window.numpy(), label="time_differential_window")
-    plt.legend()
-    plt.savefig("window_diff.png")
-    plt.close()
-    n = torch.arange(2048)
-    w_d = (1/2)*torch.sin(2*np.pi*n/(2048-1))
-    plt.plot(np.arange(2048), w_d.numpy(), label="window")
-    plt.legend()
-    plt.savefig("window_calculation.png")
-    wave, _ = torchaudio.load("./sample/JSUT_BASIC5000_0001.wav")
-    wave, inv_D = stft.stft(wave)
-    wave = stft.istft(wave, inv_D)
