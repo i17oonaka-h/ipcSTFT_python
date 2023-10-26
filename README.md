@@ -13,7 +13,7 @@ In this repository, we provide an unofficial implementation of instantaneous Pha
 
 
 ## Example
-See `usage.ipynb` and `LowRank_modeling.ipynb` for details. Used audio sample is from JSUT corpus [3].
+See `usage.ipynb` and `LowRank_modeling.ipynb` [2] for details. Used audio sample is from JSUT corpus [3].
 
 ```python
 from src.STFT import ipcSTFT
@@ -31,13 +31,15 @@ spec_del_ipceffect = spec * inv_operator # remove ipc effect
 waveform = stft.istft(spec, inv_operator)
 waveform = stft.istft(spec_del_ipceffect, None)
 ```
-![spec1](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_1.png)  
-![spec2](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_2.png)  
-![spec3](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_3.png)  
+![spec1](sample/JSUT_BASIC5000_0001_1.png)  
+![spec2](sample/JSUT_BASIC5000_0001_2.png)  
+![spec3](sample/JSUT_BASIC5000_0001_3.png)  
 
 ## Similar Projects
 - [MATLAB based official implementation](https://codeocean.com/capsule/1906064/tree/v1) (by the authors of the paper, MIT License)
 - [TensorFlow based implementation](https://github.com/StephLin/wipctv/tree/master) (by StephLin, Apache License 2.0)
 
 ## Reference
-[1] 
+[1] K. Yatabe and Y. Oikawa, "Phase corrected total variation for audio signals," _Proc. of IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)_, 2018.  
+[2] Y. Masuyama, K. Yatabe and Y. Oikawa, "Low-rankness of Complex-valued Spectrogram and Its Application to Phase-aware Audio Processing," _Proc. of IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)_, 2019.  
+[3] R. Sonobe, S. Takamichi and H. Saruwatari, "JSUT corpus: free large-scale Japanese speech corpus for end-to-end speech synthesis," _arXiv preprint (1711.00354)_, 2017.
