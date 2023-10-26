@@ -31,9 +31,9 @@ spec_del_ipceffect = spec * inv_operator # remove ipc effect
 waveform = stft.istft(spec, inv_operator)
 waveform = stft.istft(spec_del_ipceffect, None)
 ```
-![spec1](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_1.png)
-![spec2](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_2.png)
-![spec3](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_3.png))
+![spec1](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_1.png)  
+![spec2](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_2.png)  
+![spec3](https://github.com/i17oonaka-h/ipcSTFT_python/sample/JSUT_BASIC5000_0001_3.png)  
 
 ## Similar Projects
 - [MATLAB based official implementation](https://codeocean.com/capsule/1906064/tree/v1) (by the authors of the paper, MIT License)
